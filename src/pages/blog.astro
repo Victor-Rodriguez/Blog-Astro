@@ -1,5 +1,5 @@
 ---
-
+const pageTitle = "Mi blog de Astro aprendizaje";
 ---
 
 <!doctype html>
@@ -7,7 +7,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Astro Blog | Blog</title>
+    <title>Astro Blog | {pageTitle}</title>
   </head>
   <body>
     <div>
@@ -18,7 +18,7 @@
       </div>
       <main>
         <section>
-          <h1>Mi blog de Astro aprendizaje</h1>
+          <h1>{pageTitle}</h1>
           <p>Aquí es donde publicaré sobre mí viaje de aprendizaje Astro.</p>
         </section>
       </main>
