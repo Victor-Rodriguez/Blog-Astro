@@ -20,6 +20,10 @@ const skills = [
 const happy = true;
 const finished = false;
 const goal = 3;
+
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
 <!doctype html>
@@ -60,7 +64,7 @@ const goal = 3;
     </ul>
     <p>Estos son algunos de mis conocimientos:</p>
     <ul>
-      {skills.map((skill) => <li>{skill}</li>)}
+      {skills.map((skill) => <li class="skill">{skill}</li>)}
     </ul>
 
     {happy && <p>¡Estoy muy contento de estar aprendiendo Astro!</p>}
@@ -74,3 +78,25 @@ const goal = 3;
     }
   </body>
 </html>
+
+<style define:vars={{ skillColor, fontWeight, textCase }}>
+  h1 {
+    color: purple;
+    font-size: 4rem;
+  }
+
+  .skill {
+    color: var(--skillColor);
+    font-weight: var(--fontWeight);
+    text-transform: var(--textCase);
+  }
+
+  ul.skills-list {
+    list-style-type: square; /* Cambia el estilo de los puntos de la lista */
+    padding-left: 20px; /* Añade espacio a la izquierda de la lista */
+  }
+
+  ul.skills-list li {
+    margin-bottom: 10px; /* Añade espacio entre los elementos de la lista */
+  }
+</style>
