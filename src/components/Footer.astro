@@ -1,0 +1,23 @@
+---
+import Social from "./Social.astro";
+---
+
+<footer>
+  <p>
+    <Social platform="twitter" username="astrodotbuild" />
+    <Social platform="github" username="withastro" />
+    <Social platform="youtube" username="astrodotbuild" />
+  </p>
+</footer>
+
+<style>
+  footer {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+  }
+  p {
+    display: flex;
+    gap: 1rem;
+  }
+</style>

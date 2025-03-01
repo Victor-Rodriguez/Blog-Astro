@@ -1,17 +1,20 @@
 ---
-const pageTitle = "Página de inicio";
+import Header from "./Header.astro";
+import Footer from "./Footer.astro";
 import "../styles/global.css";
+const pageTitle = "Página de inicio";
 ---
 
 <div id="container">
-  <div>
-    <a href="/">Inicio</a>
-    <a href="/about/">Sobre mí</a>
-    <a href="/blog/">Blog</a>
-  </div>
+  <Header />
   <main>
     <section id="hero">
-      <h1>Mi sitio Astro</h1>
+      <h1>{pageTitle}</h1>
     </section>
   </main>
+  <Footer />
 </div>
+
+<script>
+  import "../js/menu.js";
+</script>
