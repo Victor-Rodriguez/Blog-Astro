@@ -1,6 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import BlogPost from "../components/BlogPost.astro";
 import "../styles/global.css";
+
+const allPosts = await Astro.glob("./posts/*.md"); //Devuelve un array con todos los archivos .md en la carpeta posts
 ---
 
 <Layout pageTitle="Mi blog de Astro aprendizaje">
@@ -10,10 +13,15 @@ import "../styles/global.css";
     </section>
   </main>
   <div>
-    <ul>
-      <li><a href="/posts/post-1">Publicación 1</a></li>
-      <li><a href="/posts/post-2">Publicación 2</a></li>
-      <li><a href="/posts/post-3">Publicación 3</a></li>
-    </ul>
+    {
+      allPosts.map((post) => (
+        <BlogPost
+          url={post.url}
+          title={post.frontmatter.title}
+          pubDate={post.frontmatter.pubDate}
+          tags={post.frontmatter.tags}
+        />
+      ))
+    }
   </div>
 </Layout>
